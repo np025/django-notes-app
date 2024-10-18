@@ -28,14 +28,15 @@ pipeline{
             steps{
                 echo "Pushing Image to docker hub"
                 script{
-                    docker_push("nodes-app","latest","USER")
+                    docker_push("nodes-app","latest","nikki2507")
                 }
             }
         }
-        stage("Deploy"){
+        stage("Deploy") {
             steps{
                 script{
                     docker_deploy()
+                }
             }
         }
     }
